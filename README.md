@@ -108,13 +108,11 @@ alter  role  "user name"   'permission';
 ```
 
 
-* change password of current user :
+* change password of user :
 ```
 \password   "user name";
 ```
 
-
-* change password of another user :
 ```
 ALTER   ROLE/USER   'username'   WITH   PASSWORD  'new password';
 ```
