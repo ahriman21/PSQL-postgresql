@@ -9,8 +9,16 @@
 
 
 
+## transaction
+transaction is a unit of work performed by dbms against a database.
+transaction properties :
+* Atomicity --> all transaction must be conducted or must not get started at all (if one transaction didn't work it all of them wouldn't be applied).
+* Consistency --> a value on all servers must be valid and must be the same(when you update an entity it should be updated in all the system).
+* Isolation --> each transaction should be independent and isolated from other transactions (collision cannot be happened)
+* Durablity --> all changes must be permanent (if something happened to servers, data wouldnot be lost).
 
-## normaliztion :
+
+## normaliztion
 to standard your database design
 
 * unf ==> not normalized tables
@@ -32,8 +40,6 @@ to standard your database design
           - none-key fields shouldn't depend to each other.(transitive dependency)  
 
 
-
-
 ## keys
 * candidate key = when some fileds have the condition to be primary key we call them candidate key
 
@@ -53,4 +59,17 @@ these fields that are unique and meaningfull in real world are natural keys.
 
 * composite key = if we have two fields defined as one primary key .
 
+
+## functional dependency
+it is the definition of relations between attributes of a table. with functional dependency we can find our condidate keys. for instance if we can get other attributs by one attribute that's valid :
+
+* table name:
+perosn
+
+* attribute dependency (functional dependency)
+{person_id}--->{name}, {person_id}--->{last_name}, {person_id}--->{city}
+{city}--->{country}
+
+*result: 
+the only condidate key is this example is person_id
 
